@@ -1,0 +1,64 @@
+
+epression <operand><operator><operand> (operands can be epression itself)
+ 
+    
+infix <operand><operator><operand>
+   eg.. 2+3
+        4+6*2
+
+prefix(polish notation) 
+<operator> <operand><operand>
+eg.. +23
+     + a *bc
+
+postfix
+(reverse polish notation)
+ <operand><operand><operator>
+    2 3 +    
+    p q -
+    a b c * +
+
+
+
+order of operation
+
+        1.parentheses
+        2.exponents
+        3.multiplication
+        4.addition
+
+
+evaluate using stack
+    
+    A*B + C * D - E
+
+    prefix
+        (AB* + CD*) -E
+        ((AB)*(CD)*+) - E
+        ((AB)*(CD)*+ E-
+
+
+scan the expression from left to right to find the first operator
+push the number to stack if operator not yet found
+do the operation and push it back to the stack
+
+
+token is the element obtained from scanning, could be operand or operator
+
+
+lexical analysis
+
+reading text char by char
+convert lexemes to tokens
+lexemes is one alphabet
+removing white space and comments
+if invalid token found, generate errors
+
+reads chars compare in parser and return once a token is found
+
+
+
+
+role
+
+token
