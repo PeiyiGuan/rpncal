@@ -19,7 +19,7 @@ struct lexToken *allocToken()
   }
   token->symbol[0] = '\0';
   return token;
-}
+} 
 
 
 void freeToken(struct lexToken *token)
