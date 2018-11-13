@@ -145,8 +145,15 @@ static int op_prod(struct tokenStack *stack)
 static int op_quo(struct tokenStack *stack)
 {
   int v1, v2;
+
   v2 = popInt(stack);
   v1 = popInt(stack);
+  if(v2==0){
+	  printf("cannot divide by 0\n");
+	  pushInt(stack,v1);
+	  pushInt(stack,v2);
+	  return 0;
+  }
   pushInt(stack, v1/v2);
   return(0);
 }
@@ -250,6 +257,12 @@ static int op_modquot(struct tokenStack *stack)
   int v1, v2;
   v2 = popInt(stack);
   v1 = popInt(stack);
+  if(v2==0){
+	  printf("Divider cannot be 0 \n");
+	  pushInt(stack,v1);
+	  pushInt(stack,v2);
+	  return 0;
+  }
   pushInt(stack, v1%v2);
   pushInt(stack, v1/v2);
   return(0);
